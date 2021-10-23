@@ -1,0 +1,83 @@
+* {
+  /* seletor universal */
+  margin: 0;
+}
+
+html,
+body {
+  --black: hsl(240, 6%, 13%);
+  --gray: hsl(240, 9%, 89%);
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+main {
+  background: url(images/background.svg);
+  width: 375px;
+  height: 812px;
+}
+
+.container {
+  /* margin, padding, border é box model! */
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  color: var(--gray);
+}
+
+.avatar {
+  width: 10rem;
+  margin: 11.5rem auto 0;
+  position: relative; /* agora ele é o limite para a posição absolute */
+}
+
+.avatar span {
+  /* selo */
+  position: absolute; /* sai do nível normal */
+  top: -15px;
+  z-index: 1; /* bota de volta para cima */
+}
+
+.avatar > img {
+  /* procura a PRIMEIRA img que aparece */
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover; /* img cobre todo espaço, não estica*/
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--gray);
+  text-decoration: none;
+  margin-top: 0.25rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center; /* alinha itens no eixo que cruza o principal */
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 4rem;
+  list-style: none;
+  padding: 0;
+  display: flex; /* automaticamente deixa um elemento ao lado do outro no eixo vertical */
+  gap: 0.5rem; /* espaço entre eles */
+  justify-content: center; /* alinhamento do eixo principal */
+}
