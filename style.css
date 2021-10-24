@@ -13,16 +13,63 @@ body {
 }
 
 body {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-main {
-  /* vw: viewport width, */
-  background: url(images/background.svg) no-repeat center/cover;
-  width: 100vw;
-  min-height: 812px;
-  height: 100vh;
+@media (min-width: 720px) {
+  /* desktop */
+  main {
+    /* vw: viewport width, */
+    background: url(images/desktop-container.svg) no-repeat center/cover;
+    width: 22.375rem;
+    min-height: 33.75rem;
+    max-height: 650px;
+    position: relative;
+    margin-top: 4.5rem;
+  }
+
+  .ribbon {
+    height: 10.25rem;
+    position: absolute;
+    z-index: 1;
+    top: -3.5rem;
+  }
+
+  body {
+    background: url(images/desktop-bg.svg) no-repeat center/cover;
+    background-color: var(--black);
+  }
+
+  .avatar {
+    margin: 4.5rem auto 0;
+  }
+
+  ul {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 720px) {
+  /* mobile */
+  main {
+    /* vw: viewport width, */
+    background: url(images/background.svg) no-repeat center/cover;
+    width: 100vw;
+    min-height: 812px;
+    height: 100vh;
+  }
+
+  .avatar {
+    margin: 11.5rem auto 0;
+  }
+
+  ul {
+    margin-top: 4rem;
+  }
+  .ribbon {
+    display: none;
+  }
 }
 
 .container {
@@ -37,15 +84,15 @@ main {
 
 .avatar {
   width: 10rem;
-  margin: 11.5rem auto 0;
   position: relative; /* agora ele é o limite para a posição absolute */
+  z-index: 2;
 }
 
 .avatar span {
   /* selo */
   position: absolute; /* sai do nível normal */
   top: -15px;
-  z-index: 1; /* bota de volta para cima */
+  z-index: 3; /* bota de volta para cima */
 }
 
 .avatar > img {
@@ -76,7 +123,6 @@ p {
 }
 
 ul {
-  margin-top: 4rem;
   list-style: none;
   padding: 0;
   display: flex; /* automaticamente deixa um elemento ao lado do outro no eixo vertical */
