@@ -52,6 +52,9 @@ body {
 
 @media (max-width: 720px) {
   /* mobile */
+  .ribbon {
+    display: none;
+  }
   main {
     /* vw: viewport width, */
     background: url(images/background.svg) no-repeat center/cover;
@@ -63,12 +66,8 @@ body {
   .avatar {
     margin: 11.5rem auto 0;
   }
-
   ul {
     margin-top: 4rem;
-  }
-  .ribbon {
-    display: none;
   }
 }
 
